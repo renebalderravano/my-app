@@ -1,0 +1,164 @@
+<h1>Publicación</h1><br>
+<form [formGroup]="publicationForm" (ngSubmit)="onSubmit()">
+  <input type="hidden" name="id" formControlName="id">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="name">Nombre: </label>
+          </div>
+          <div class="col-sm-10">
+            <input id="name" type="text" formControlName="carName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="price">Precio: </label>
+          </div>
+          <div class="col-sm-10">
+            <input id="price" type="text" formControlName="price">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="agency">Agencia: </label>
+          </div>
+          <div class="col-sm-10">
+            <input id="agency" type="text" formControlName="agency">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="location">Ubicacion: </label>
+          </div>
+          <div class="col-sm-10">
+            <input id="location" type="text" formControlName="location">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="photo">Foto: </label>
+          </div>
+          <div class="col-sm-10">
+            <input id="photo" type="text" formControlName="photo">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="availableUnits">Unidades disponibles: </label>
+          </div>
+          <div class="col-sm-10">
+            <input id="availableUnits" type="number" formControlName="availableUnits">
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-sm-9">
+
+          </div>
+
+          <div class="col-sm-3" style="justify-content: flex-end; align-items: flex-end;">
+            <button class="primary" type="submit">Guardar</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-12">
+            <img class="listing-photo" src="{{ publicationForm.controls.photo.value }}" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+
+
+</form>
+<!-- <div>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <table style="width: 40%;">
+      <tr>
+        <td>
+          <label for="name">Name: </label>
+        </td>
+        <td>
+          <input id="name" type="text" formControlName="name">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="city">City: </label>
+  
+        </td>
+        <td>
+  
+          <input id="city" type="text" formControlName="city">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="state">State: </label>
+  
+        </td>
+        <td>
+  
+          <input id="state" type="text" formControlName="state">
+        </td>
+      </tr>
+      <tr>
+        <td>
+  
+          <label for="photo">Photo: </label>
+        </td>
+        <td>
+  
+          <input id="photo" type="text" formControlName="photo">
+        </td>
+      </tr>
+      <tr>
+        <td>
+  
+          <label for="availableUnits">Available units: </label>
+        </td>
+        <td>
+          <input id="availableUnits" type="number" formControlName="availableUnits">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="wifi">Wifi: </label>
+        </td>
+        <td>
+          <div class="checkbox-wrapper-3">
+            <input type="checkbox" id="cbx-3" formControlName="wifi" />
+            <label for="cbx-3" class="toggle"><span></span></label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="laundry">Laundry: </label>
+        </td>
+        <td>
+          <div class="checkbox-wrapper-3">
+            <input type="checkbox" id="cbx-4" formControlName="laundry" />
+            <label for="cbx-4" class="toggle"><span></span></label>
+          </div>
+        </td>
+      </tr>
+  
+  
+    </table>
+  
+  
+    <button class="primary" type="submit">Guardar</button>
+  
+  </form>
+</div> -->

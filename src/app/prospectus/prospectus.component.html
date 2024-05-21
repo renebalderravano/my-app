@@ -1,0 +1,28 @@
+<h1>Solicitudes de cotización</h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Email</th>
+        <th scope="col">Auto</th>
+        <th scope="col">Agencia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr   *ngFor="let customer of customerList" (click)="verCliente(customer)" style="cursor: pointer;" >
+        <th scope="row">{{customer.id}}</th>
+        <td style="min-width: 300px;"><p>{{customer.name}}</p></td>
+        <td>{{customer.city}}</td>
+        <td>{{customer.state}}</td>
+        <td>{{customer.cellphone}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.publication.carName}}</td>
+        <td>{{customer.publication.agency}}</td>
+      </tr>
+    
+    </tbody>
+  </table>

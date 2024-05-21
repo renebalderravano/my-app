@@ -1,0 +1,12 @@
+<section>
+    <form>
+      <input type="text" placeholder="Filtrar por agencia" #filter (keyup)="filterResults($event)">
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Buscar</button>&nbsp;
+      <a href="/createpublication"><button class="primary" type="button" >Agregar publicación</button></a>
+      &nbsp;
+      <a href="/seguimiento"><button class="primary" type="button" >Seguimiento</button></a>
+    </form>
+  </section>
+  <section class="results">
+  <app-publication  *ngFor="let publication of filteredpublicationList" [publication]="publication"></app-publication>
+  </section>

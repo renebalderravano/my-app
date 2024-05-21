@@ -1,0 +1,9 @@
+<section class="listing">
+    <a [routerLink]="['/details', publication.id]"><img class="listing-photo" [src]="publication.photo"/> </a>
+    <h2 class="listing-heading">{{ publication.carName }}</h2>
+    <h2 class="listing-heading">{{ publication.price | currency }}</h2>
+    <p class="listing-location">{{ publication.agency}}, {{publication.location }}</p>
+
+    <br>
+    <a (click)="editar()">Editar</a>
+</section>

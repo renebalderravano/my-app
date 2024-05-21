@@ -1,0 +1,33 @@
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <section class="listing-description">
+                    <h2 class="listing-heading">{{publication?.carName}}</h2>
+                    <h2 class="listing-heading">{{publication?.price | currency }}</h2>
+                    <p class="listing-location">{{publication?.agency}}, {{publication?.location}}</p>
+                  </section>
+                  <section class="listing-features">
+                    <ul>
+                      <li>Unidades disponibles: {{publication?.availableUnits}}</li>
+                    </ul>
+                  </section>
+                  <img class="listing-photo" [src]="publication?.photo"
+                  alt="Exterior photo of {{publication?.carName}}"/>
+            </div>
+            <div class="col-sm-6">
+                
+                <h1>Cotizar Online</h1>
+                <br>
+                <app-customer [publication] = "publication"></app-customer>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              
+            </div>
+        </div>
+    </div>
+    
+
+  </article>

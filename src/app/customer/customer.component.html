@@ -1,0 +1,143 @@
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" name="id" formControlName="id">
+
+    <div class="container" *ngIf="!isEdit">
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="name">Nombre: </label>
+            </div>
+            <div class="col-sm-9">
+                <input id="name" type="text" formControlName="name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="city">Ciudad: </label>
+            </div>
+            <div class="col-sm-9">
+                <input id="city" type="text" formControlName="city">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="state">Estado: </label>
+            </div>
+            <div class="col-sm-9">
+                <input id="state" type="text" formControlName="state">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="cellphone">Celular: </label>
+            </div>
+            <div class="col-sm-9">
+                <input id="cellphone" type="text" formControlName="cellphone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="email">Email: </label>
+            </div>
+            <div class="col-sm-9">
+                <input id="email" type="email" formControlName="email">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8">
+            </div>
+            <div class="col-sm-4" style="justify-content: flex-end; align-items: flex-end;">
+                <br>
+                <button class="primary" type="submit">Cotizar Online</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container" *ngIf="isEdit">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <section class="listing-description">
+                            <h2 class="listing-heading">{{customerForm.get('publication')?.value?.carName}}</h2>
+                            <p class="listing-location">{{customerForm.get('publication')?.value?.agency}},
+                                {{customerForm.get('publication')?.value?.location}}</p>
+                        </section>
+                        <section class="listing-features">
+                            <ul>
+                                <li>Unidades Disponibles: {{customerForm.get('publication')?.value.availableUnits}}
+                                </li>
+                                <li>
+                                    <img class="listing-photo"
+                                        [src]="customerForm.get('publication')?.value.photo" />
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="name">Nombre: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3>{{customerForm.get('name')?.value}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="city">Ciudad: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3> {{customerForm.get('city')?.value}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="state">Estado: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3> {{customerForm.get('state')?.value}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="cellphone">Celular: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3> {{customerForm.get('cellphone')?.value}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label for="email">Email: </label>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3> {{customerForm.get('email')?.value}}</h3>
+                    </div>
+                </div>
+
+                <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <a href="mailto:{{ customerForm.get('email')?.value}}" class="float2" target="_blank">
+                    <i class="fa fa-envelope-o my-float"></i>
+                </a>
+                <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <a href="https://api.whatsapp.com/send?phone={{ customerForm.get('cellphone')?.value}}&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+                    class="float" target="_blank">
+                    <i class="fa fa-whatsapp my-float"></i>
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</form>
